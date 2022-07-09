@@ -31,6 +31,7 @@ type
     lb_num1: TLabel;
     lb_num2: TLabel;
     Button4: TButton;
+    Button8: TButton;
     procedure btn_divideClick(Sender: TObject);
     procedure btn_multiplieClick(Sender: TObject);
     procedure btn_minusClick(Sender: TObject);
@@ -46,6 +47,9 @@ type
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
        //var só usadas nesse form
   private
     { Private declarations }
@@ -112,26 +116,7 @@ begin
 
 
 end;
-  //botao +
-procedure TForm1.btn_minusClick(Sender: TObject);
-begin
-      lb_operation.Text := '-';
-      btn_minus.Enabled := false;
 
-      btn_plus.Enabled := true;
-      btn_divide.Enabled := true;
-      btn_multiplie.Enabled := true;
-end;
-    //botao -
-procedure TForm1.btn_plusClick(Sender: TObject);
-begin
-      lb_operation.Text := '+';
-      btn_plus.Enabled := false;
-
-      btn_minus.Enabled := true;
-      btn_divide.Enabled := true;
-      btn_multiplie.Enabled := true;
-end;
 
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -180,22 +165,49 @@ procedure TForm1.Button3Click(Sender: TObject);
 begin
     if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '3';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '3';
     end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  lb_num1.Text := 'A';
+  lb_num2.Text := 'B';
+  lb_operation.Text := '.';
+   btn_plus.Enabled := true;
+   btn_minus.Enabled := true;
+   btn_divide.Enabled := true;
+   btn_multiplie.Enabled := true;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
     if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '4';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '4';
     end;
 end;
@@ -204,10 +216,18 @@ procedure TForm1.Button6Click(Sender: TObject);
 begin
     if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '5';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '5';
     end;
 end;
@@ -216,22 +236,58 @@ procedure TForm1.Button7Click(Sender: TObject);
 begin
     if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '6';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '6';
     end;
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+    if lb_operation.Text = '.' then
+    begin
+        lb_num1.Text := copy(lb_num1.Text, 0, length(lb_num1.text)-1 );
+    end
+    else
+    begin
+        lb_num2.Text := copy(lb_num2.Text, 0, length(lb_num2.text)-1 );
+    end;
+    if lb_num2.Text = '' then
+    begin
+        lb_operation.Text := '.'
+    end;
+
+
+
+
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
     if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '7';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '7';
     end;
 end;
@@ -240,10 +296,18 @@ procedure TForm1.Button10Click(Sender: TObject);
 begin
    if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '8';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '8';
     end;
 end;
@@ -252,11 +316,31 @@ procedure TForm1.Button11Click(Sender: TObject);
 begin
    if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '9';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '9';
+    end;
+end;
+
+procedure TForm1.Button13Click(Sender: TObject);
+begin
+    if lb_operation.Text = '.' then
+    begin
+        lb_num1.Text := lb_num1.Text + ',';
+    end
+  else
+    begin
+        lb_num2.Text := lb_num2.Text + ',';
     end;
 end;
 
@@ -264,10 +348,18 @@ procedure TForm1.Button14Click(Sender: TObject);
 begin
    if lb_operation.Text = '.' then
     begin
+        if lb_num1.Text = 'A' then
+        begin
+           lb_num1.Text := '';
+        end;
         lb_num1.Text := lb_num1.Text + '0';
     end
   else
     begin
+        if lb_num2.Text = 'B' then
+        begin
+           lb_num2.Text := '';
+        end;
         lb_num2.Text := lb_num2.Text + '0';
     end;
 end;
@@ -283,7 +375,7 @@ begin
       btn_minus.Enabled := true;
       btn_multiplie.Enabled := true;
 end;
-      //botao *
+//botao *
 procedure TForm1.btn_multiplieClick(Sender: TObject);
 begin
       lb_operation.Text := '*';
@@ -292,6 +384,26 @@ begin
       btn_divide.Enabled := true;
       btn_plus.Enabled := true;
       btn_minus.Enabled := true;
+end;
+//botao +
+procedure TForm1.btn_minusClick(Sender: TObject);
+begin
+      lb_operation.Text := '-';
+      btn_minus.Enabled := false;
+
+      btn_plus.Enabled := true;
+      btn_divide.Enabled := true;
+      btn_multiplie.Enabled := true;
+end;
+//botao -
+procedure TForm1.btn_plusClick(Sender: TObject);
+begin
+      lb_operation.Text := '+';
+      btn_plus.Enabled := false;
+
+      btn_minus.Enabled := true;
+      btn_divide.Enabled := true;
+      btn_multiplie.Enabled := true;
 end;
 
 

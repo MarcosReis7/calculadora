@@ -234,15 +234,4 @@ object Form1: TForm1
       OnClick = Button8Click
     end
   end
-  object Button12: TButton
-    Position.X = 401.000000000000000000
-    Position.Y = 249.000000000000000000
-    Size.Width = 80.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    StyleLookup = 'stoptoolbuttonbordered'
-    TabOrder = 6
-    Text = 'Button12'
-    OnClick = Button12Click
-  end
 end
