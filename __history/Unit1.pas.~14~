@@ -261,14 +261,12 @@ begin
     else
     begin
         lb_num2.Text := copy(lb_num2.Text, 0, length(lb_num2.text)-1 );
+        if lb_num2.Text = '' then
+        begin
+           lb_operation.Text := '.'
+        end;
+
     end;
-    if lb_num2.Text = '' then
-    begin
-        lb_operation.Text := '.'
-    end;
-
-
-
 
 end;
 

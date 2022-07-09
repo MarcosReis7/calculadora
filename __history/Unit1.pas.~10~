@@ -31,7 +31,6 @@ type
     lb_num1: TLabel;
     lb_num2: TLabel;
     Button4: TButton;
-    Button8: TButton;
     procedure btn_divideClick(Sender: TObject);
     procedure btn_multiplieClick(Sender: TObject);
     procedure btn_minusClick(Sender: TObject);
@@ -49,7 +48,6 @@ type
     procedure Button14Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
-    procedure Button8Click(Sender: TObject);
        //var só usadas nesse form
   private
     { Private declarations }
@@ -186,10 +184,6 @@ begin
   lb_num1.Text := 'A';
   lb_num2.Text := 'B';
   lb_operation.Text := '.';
-   btn_plus.Enabled := true;
-   btn_minus.Enabled := true;
-   btn_divide.Enabled := true;
-   btn_multiplie.Enabled := true;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
@@ -250,26 +244,6 @@ begin
         end;
         lb_num2.Text := lb_num2.Text + '6';
     end;
-end;
-
-procedure TForm1.Button8Click(Sender: TObject);
-begin
-    if lb_operation.Text = '.' then
-    begin
-        lb_num1.Text := copy(lb_num1.Text, 0, length(lb_num1.text)-1 );
-    end
-    else
-    begin
-        lb_num2.Text := copy(lb_num2.Text, 0, length(lb_num2.text)-1 );
-    end;
-    if lb_num2.Text = '' then
-    begin
-        lb_operation.Text := '.'
-    end;
-
-
-
-
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);

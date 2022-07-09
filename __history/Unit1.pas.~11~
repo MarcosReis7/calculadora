@@ -262,14 +262,6 @@ begin
     begin
         lb_num2.Text := copy(lb_num2.Text, 0, length(lb_num2.text)-1 );
     end;
-    if lb_num2.Text = '' then
-    begin
-        lb_operation.Text := '.'
-    end;
-
-
-
-
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
