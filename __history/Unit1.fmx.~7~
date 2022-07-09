@@ -63,7 +63,6 @@ object Form1: TForm1
       Size.PlatformDefault = False
       TabOrder = 9
       Text = '.'
-      OnClick = Button13Click
     end
     object Button14: TButton
       Position.X = 104.000000000000000000

@@ -47,7 +47,6 @@ type
     procedure Button11Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Button13Click(Sender: TObject);
        //var só usadas nesse form
   private
     { Private declarations }
@@ -303,18 +302,6 @@ begin
            lb_num2.Text := '';
         end;
         lb_num2.Text := lb_num2.Text + '9';
-    end;
-end;
-
-procedure TForm1.Button13Click(Sender: TObject);
-begin
-    if lb_operation.Text = '.' then
-    begin
-        lb_num1.Text := lb_num1.Text + ',';
-    end
-  else
-    begin
-        lb_num2.Text := lb_num2.Text + ',';
     end;
 end;
 
